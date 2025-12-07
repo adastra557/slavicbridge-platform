@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Hub - SlavicBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-en">SlavicBridge</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ru hidden">Славянский Мост</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ua hidden">Слов'янський Міст</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full bg-emerald-100 hover:bg-emerald-200">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-forest-green"><i data-lucide="home" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 p-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-8 lang-en">Adventure Hub</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ru hidden">Центр Приключений</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ua hidden">Центр пригод</h1>
+            <p class="text-center text-lg mb-12 lang-en">Your personalized dashboard for the Enchanted Forest journey.</p>
+            <p class="text-center text-lg mb-12 lang-ru hidden">Ваша персонализированная панель для путешествия по Волшебному Лесу.</p>
+            <p class="text-center text-lg mb-12 lang-ua hidden">Ваш персоналізований дашборд для подорожі Чарівним Лісом.</p>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Progress Overview</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Обзор Прогресса</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Огляд прогресу</h2>
+                <div id="progress-bar" class="w-full bg-gray-200 rounded-full h-4">
+                    <div class="bg-emerald-600 h-4 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+                <p id="progress-text" class="mt-2 lang-en">0% Complete</p>
+                <p class="mt-2 lang-ru hidden">0% Завершено</p>
+                <p class="mt-2 lang-ua hidden">0% Завершено</p>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Badges Earned</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Полученные Значки</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Зароблені значки</h2>
+                <div id="badges" class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                    <div class="bg-emerald-100 p-4 rounded-lg text-center"><i data-lucide="award" class="w-8 h-8 mx-auto text-emerald-600"></i><p class="text-sm lang-en">Greeter</p></div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-center opacity-50"><i data-lucide="award" class="w-8 h-8 mx-auto text-gray-400"></i><p class="text-sm lang-en">Counter</p></div>
+                    <!-- More badges placeholders -->
+                </div>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Personalized Recommendations</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Персонализированные Рекомендации</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Персоналізовані рекомендації</h2>
+                <ul class="space-y-2">
+                    <li class="flex items-center p-3 bg-emerald-50 rounded"><i data-lucide="book" class="w-5 h-5 mr-3 text-emerald-600"></i><a href="../lessons/lesson-1.html" class="lang-en">Start with Greetings Lesson</a><a href="../lessons/lesson-1.html" class="lang-ru hidden">Начните с урока Приветствий</a><a href="../lessons/lesson-1.html" class="lang-ua hidden">Почніть з уроку Привітань</a></li>
+                    <li class="flex items-center p-3 bg-blue-50 rounded"><i data-lucide="zap" class="w-5 h-5 mr-3 text-blue-600"></i><a href="../games.html" class="lang-en">Play Leshy's Greeting Garden</a><a href="../games.html" class="lang-ru hidden">Играйте в Сад Приветствий Лешего</a><a href="../games.html" class="lang-ua hidden">Грайте в Сад Привітань Лешего</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-forest-green text-white py-8 mt-20 fixed bottom-0 w-full">
+        <div class="text-center">
+            <p class="lang-en">&amp;copy; 2025 SlavicBridge</p>
+            <p class="lang-ru hidden">&amp;copy; 2025 Славянский Мост</p>
+            <p class="lang-ua hidden">&amp;copy; 2025 Слов'янський Міст</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function loadProgress() {
+            const progress = JSON.parse(localStorage.getItem('slavicbridge-progress') || '{}');
+            const total = 10;
+            const completed = Object.values(progress).filter(Boolean).length;
+            const percentage = (completed / total) * 100;
+            document.querySelector('#progress-bar div').style.width = percentage + '%';
+            document.getElementById('progress-text').textContent = Math.round(percentage) + '% Complete';
+            const lang = localStorage.getItem('language') || 'en';
+            if (lang === 'ru') document.getElementById('progress-text').textContent = Math.round(percentage) + '% Завершено';
+            if (lang === 'ua') document.getElementById('progress-text').textContent = Math.round(percentage) + '% Завершено';
+        }
+
+        loadProgress();
+    </script>
+</body>
+</html>

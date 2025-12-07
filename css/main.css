@@ -1,0 +1,26 @@
+:root {
+    --forest-green: #166534;
+}
+
+.lang-ru .lang-en,
+.lang-ua .lang-en,
+.lang-en .lang-ru,
+.lang-ua .lang-ru,
+.lang-en .lang-ua,
+.lang-ru .lang-ua {
+    display: none;
+}
+
+.lang-ru .lang-ru,
+.lang-ua .lang-ua,
+.lang-en .lang-en {
+    display: block;
+}
+
+.hover\:scale-110:hover {
+    transform: scale(1.1);
+}
+
+.transform {
+    transition: transform 0.3s ease;
+}

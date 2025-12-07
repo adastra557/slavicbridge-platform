@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - SlavicBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-en">SlavicBridge</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ru hidden">Славянский Мост</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ua hidden">Слов'янський Міст</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full bg-emerald-100 hover:bg-emerald-200">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-forest-green"><i data-lucide="home" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 p-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-8 lang-en">Teacher Dashboard</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ru hidden">Панель Учителя</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ua hidden">Панель Вчителя</h1>
+            <p class="text-center text-lg mb-12 lang-en">Monitor student progress, provide feedback, and track class performance.</p>
+            <p class="text-center text-lg mb-12 lang-ru hidden">Мониторьте прогресс учеников, предоставляйте обратную связь и отслеживайте производительность класса.</p>
+            <p class="text-center text-lg mb-12 lang-ua hidden">Моніторьте прогрес учнів, надавайте зворотний зв'язок та відстежуйте продуктивність класу.</p>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Class Overview</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Обзор Класса</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Огляд Класу</h2>
+                <canvas id="class-chart" width="400" height="200"></canvas>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Student List &amp; Feedback</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Список Учеников и Обратная Связь</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Список Учнів та Зворотний Зв'язок</h2>
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-center p-4 bg-gray-50 rounded">
+                        <span class="font-medium lang-en">Masha</span>
+                        <span class="font-medium lang-ru hidden">Маша</span>
+                        <span class="font-medium lang-ua hidden">Маша</span>
+                        <span>85% Progress</span>
+                        <button class="bg-green-600 text-white px-4 py-1 rounded text-sm" onclick="provideFeedback('Masha')">
+                            <span class="lang-en">Feedback</span>
+                            <span class="lang-ru hidden">Обратная Связь</span>
+                            <span class="lang-ua hidden">Зворотний Зв'язок</span>
+                        </button>
+                    </li>
+                    <li class="flex justify-between items-center p-4 bg-gray-50 rounded">
+                        <span class="font-medium lang-en">Maxim</span>
+                        <span class="font-medium lang-ru hidden">Максим</span>
+                        <span class="font-medium lang-ua hidden">Максим</span>
+                        <span>70% Progress</span>
+                        <button class="bg-green-600 text-white px-4 py-1 rounded text-sm" onclick="provideFeedback('Maxim')">
+                            <span class="lang-en">Feedback</span>
+                            <span class="lang-ru hidden">Обратная Связь</span>
+                            <span class="lang-ua hidden">Зворотний Зв'язок</span>
+                        </button>
+                    </li>
+                    <!-- More students -->
+                </ul>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Monitoring Tools</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Инструменты Мониторинга</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Інструменти Моніторингу</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button class="bg-blue-600 text-white p-4 rounded" onclick="alert('Generate report (placeholder)')">
+                        <span class="lang-en">Generate Report</span>
+                        <span class="lang-ru hidden">Сгенерировать Отчет</span>
+                        <span class="lang-ua hidden">Згенерувати Звіт</span>
+                    </button>
+                    <button class="bg-purple-600 text-white p-4 rounded" onclick="alert('Send feedback (placeholder)')">
+                        <span class="lang-en">Bulk Feedback</span>
+                        <span class="lang-ru hidden">Массовый Обратная Связь</span>
+                        <span class="lang-ua hidden">Масовий Зворотний Зв'язок</span>
+                    </button>
+                    <button class="bg-green-600 text-white p-4 rounded" onclick="alert('View detailed analytics (placeholder)')">
+                        <span class="lang-en">Detailed Analytics</span>
+                        <span class="lang-ru hidden">Детальная Аналитика</span>
+                        <span class="lang-ua hidden">Детальна Аналітика</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-forest-green text-white py-8 mt-20">
+        <div class="text-center">
+            <p class="lang-en">&amp;copy; 2025 SlavicBridge</p>
+            <p class="lang-ru hidden">&amp;copy; 2025 Славянский Мост</p>
+            <p class="lang-ua hidden">&amp;copy; 2025 Слов'янський Міст</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        const classCtx = document.getElementById('class-chart').getContext('2d');
+        new Chart(classCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Class Average',
+                    data: [60, 70, 80, 85],
+                    borderColor: '#3b82f6',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        function provideFeedback(student) {
+            const feedback = prompt(`Feedback for ${student}:`);
+            if (feedback) {
+                alert(`Feedback "${feedback}" sent to ${student} (placeholder)`);
+            }
+        }
+    </script>
+</body>
+</html>

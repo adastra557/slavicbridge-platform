@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Speaker Corner - SlavicBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-en">SlavicBridge</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ru hidden">Славянский Мост</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ua hidden">Слов'янський Міст</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full bg-emerald-100 hover:bg-emerald-200">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-forest-green"><i data-lucide="home" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 p-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-8 lang-en">Native Speaker Corner</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ru hidden">Уголок Носителя Языка</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ua hidden">Куток Носія Мови</h1>
+            <p class="text-center text-lg mb-12 lang-en">Watch videos and ask questions to native English speakers!</p>
+            <p class="text-center text-lg mb-12 lang-ru hidden">Смотрите видео и задавайте вопросы носителям английского!</p>
+            <p class="text-center text-lg mb-12 lang-ua hidden">Дивіться відео та ставте питання носіям англійської!</p>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Video: Greetings with a Native Speaker</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Видео: Приветствия с Носителем</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Відео: Привітання з Носієм</h2>
+                <video width="100%" height="auto" controls poster="https://via.placeholder.com/640x360?text=Native+Speaker+Greetings">
+                    <source src="placeholder-native-greetings.mp4" type="video/mp4">
+                    Placeholder for native speaker video on greetings. Autoplay muted loop.
+                </video>
+                <p class="mt-4 italic lang-en">Learn natural pronunciation and cultural tips!</p>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Video: Numbers with a Native Speaker</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Видео: Числа с Носителем</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Відео: Числа з Носієм</h2>
+                <video width="100%" height="auto" controls poster="https://via.placeholder.com/640x360?text=Native+Speaker+Numbers">
+                    <source src="placeholder-native-numbers.mp4" type="video/mp4">
+                    Placeholder for native speaker video on numbers.
+                </video>
+            </section>
+
+            <section class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Q&amp;A Section</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Раздел Вопросов и Ответов</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Розділ Питань та Відповідей</h2>
+                <form class="space-y-4">
+                    <textarea placeholder="Ask a question about English... (Задайте вопрос об английском... / Запитайте про англійську...)" class="w-full p-3 border rounded-lg" rows="4"></textarea>
+                    <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded">Submit Question</button>
+                </form>
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold lang-en">Sample Q&amp;A:</p>
+                    <p class="font-semibold lang-ru hidden">Пример В&amp;О:</p>
+                    <p class="font-semibold lang-ua hidden">Зразок П&amp;В:</p>
+                    <p class="lang-en">Q: How do you say hello to friends? A: Hi or Hey!</p>
+                    <p class="lang-ru hidden">В: Как сказать привет друзьям? О: Hi или Hey!</p>
+                    <p class="lang-ua hidden">П: Як сказати привіт друзям? В: Hi або Hey!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-forest-green text-white py-8 mt-20">
+        <div class="text-center">
+            <p class="lang-en">&amp;copy; 2025 SlavicBridge</p>
+            <p class="lang-ru hidden">&amp;copy; 2025 Славянский Мост</p>
+            <p class="lang-ua hidden">&amp;copy; 2025 Слов'янський Міст</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('video').forEach(video => {
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Question submitted! (Placeholder for real-time feedback)');
+        });
+    </script>
+</body>
+</html>

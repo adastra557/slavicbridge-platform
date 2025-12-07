@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Zone - SlavicBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-en">SlavicBridge</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ru hidden">Славянский Мост</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ua hidden">Слов'янський Міст</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full bg-emerald-100 hover:bg-emerald-200">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-forest-green"><i data-lucide="home" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 p-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-8 lang-en">Interactive Games Zone</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ru hidden">Зона Интерактивных Игр</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ua hidden">Зона Інтерактивних Ігор</h1>
+            <p class="text-center text-lg mb-12 lang-en">Play fun games to practice English with Slavic folklore themes!</p>
+            <p class="text-center text-lg mb-12 lang-ru hidden">Играйте в веселые игры, чтобы практиковать английский с славянскими фольклорными темами!</p>
+            <p class="text-center text-lg mb-12 lang-ua hidden">Грайте в веселі ігри, щоб практикувати англійську з слов'янськими фольклорними темами!</p>
+
+            <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Game 1: Leshy's Greeting Garden</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Игра 1: Сад Приветствий Лешего</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Гра 1: Сад Привітань Лешего</h2>
+                <p class="mb-4 lang-en">Match English greetings with their translations to grow the magical garden.</p>
+                <p class="mb-4 lang-ru hidden">Сопоставьте английские приветствия с переводами, чтобы вырастить волшебный сад.</p>
+                <p class="mb-4 lang-ua hidden">Поєднайте англійські привітання з перекладами, щоб виростити чарівний сад.</p>
+                <iframe src="https://adastra557.github.io/leshy-game/" class="w-full h-96 border-0 rounded-lg shadow-inner" title="Leshy's Greeting Garden"></iframe>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 lang-en">Game 2: Number Berry Hunt (Placeholder)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ru hidden">Игра 2: Охота за Ягодами Чисел (Плейсхолдер)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ua hidden">Гра 2: Полювання на Ягоди Чисел (Плейсхолдер)</h3>
+                    <p class="lang-en">Collect berries by counting in English. Based on Lesson 2.</p>
+                    <p class="lang-ru hidden">Собирайте ягоды, считая по-английски. Основано на Уроке 2.</p>
+                    <p class="lang-ua hidden">Збирайте ягоди, рахуючи англійською. На основі Уроку 2.</p>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded mt-4" onclick="alert('Game coming soon!')">Play Game</button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 lang-en">Game 3: Color Matching Forest (Placeholder)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ru hidden">Игра 3: Лес Сопоставления Цветов (Плейсхолдер)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ua hidden">Гра 3: Ліс Підбору Кольорів (Плейсхолдер)</h3>
+                    <p class="lang-en">Match colors to forest objects. Based on Lesson 3.</p>
+                    <p class="lang-ru hidden">Сопоставьте цвета с лесными объектами. Основано на Уроке 3.</p>
+                    <p class="lang-ua hidden">Поєднайте кольори з лісовими об'єктами. На основі Уроку 3.</p>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded mt-4" onclick="alert('Game coming soon!')">Play Game</button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 lang-en">Game 4: Routine Rhythm Dance (Placeholder)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ru hidden">Игра 4: Танец Ритма Ритуалов (Плейсхолдер)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ua hidden">Гра 4: Танець Ритму Ритуалів (Плейсхолдер)</h3>
+                    <p class="lang-en">Dance to daily routine phrases. Based on Lesson 4.</p>
+                    <p class="lang-ru hidden">Танцуйте под фразы ежедневных ритуалов. Основано на Уроке 4.</p>
+                    <p class="lang-ua hidden">Танцюйте під фрази щоденних ритуалів. На основі Уроку 4.</p>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded mt-4" onclick="alert('Game coming soon!')">Play Game</button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 lang-en">Game 5: Family Tree Puzzle (Placeholder)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ru hidden">Игра 5: Пазл Семейного Дерева (Плейсхолдер)</h3>
+                    <h3 class="text-xl font-semibold mb-4 lang-ua hidden">Гра 5: Пазл Сімейного Дерева (Плейсхолдер)</h3>
+                    <p class="lang-en">Assemble the family tree by naming members. Based on Lesson 5.</p>
+                    <p class="lang-ru hidden">Соберите семейное дерево, называя членов. Основано на Уроке 5.</p>
+                    <p class="lang-ua hidden">Зберіть сімейне дерево, називаючи членів. На основі Уроку 5.</p>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded mt-4" onclick="alert('Game coming soon!')">Play Game</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-forest-green text-white py-8 mt-20">
+        <div class="text-center">
+            <p class="lang-en">&amp;copy; 2025 SlavicBridge</p>
+            <p class="lang-ru hidden">&amp;copy; 2025 Славянский Мост</p>
+            <p class="lang-ua hidden">&amp;copy; 2025 Слов'янський Міст</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

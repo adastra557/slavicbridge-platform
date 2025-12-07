@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker - SlavicBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-en">SlavicBridge</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ru hidden">Славянский Мост</a>
+                    <a href="../index.html" class="text-2xl font-bold text-forest-green lang-ua hidden">Слов'янський Міст</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="lang-toggle" class="p-2 rounded-full bg-emerald-100 hover:bg-emerald-200">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-forest-green"><i data-lucide="home" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 p-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-8 lang-en">Progress Tracker</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ru hidden">Трекер Прогресса</h1>
+            <h1 class="text-4xl font-bold text-center mb-8 lang-ua hidden">Трекер Прогресу</h1>
+            <p class="text-center text-lg mb-12 lang-en">View your learning journey, level-ups, and analytics. Switch to parent/teacher view below.</p>
+            <p class="text-center text-lg mb-12 lang-ru hidden">Просматривайте ваше обучение, повышения уровня и аналитику. Переключитесь на вид родителя/учителя ниже.</p>
+            <p class="text-center text-lg mb-12 lang-ua hidden">Переглядайте вашу навчальну подорож, підвищення рівня та аналітику. Перемкніться на вид батьків/вчителя нижче.</p>
+
+            <button id="view-toggle" class="bg-blue-600 text-white px-6 py-2 rounded mb-8 mx-auto block hover:bg-blue-700">
+                <span class="lang-en">Switch to Parent/Teacher View</span>
+                <span class="lang-ru hidden">Переключиться на Вид Родителя/Учителя</span>
+                <span class="lang-ua hidden">Перемкнутися на Вид Батьків/Вчителя</span>
+            </button>
+
+            <section id="student-view" class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Your Progress</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Ваш Прогресс</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Ваш Прогрес</h2>
+                <canvas id="progress-chart" width="400" height="200"></canvas>
+                <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <i data-lucide="target" class="w-8 h-8 mx-auto mb-2 text-emerald-600"></i>
+                        <p class="font-bold lang-en">Level 3</p>
+                        <p class="font-bold lang-ru hidden">Уровень 3</p>
+                        <p class="font-bold lang-ua hidden">Рівень 3</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="award" class="w-8 h-8 mx-auto mb-2 text-yellow-600"></i>
+                        <p class="font-bold lang-en">5 Badges</p>
+                        <p class="font-bold lang-ru hidden">5 Значков</p>
+                        <p class="font-bold lang-ua hidden">5 Значків</p>
+                    </div>
+                    <!-- More stats -->
+                </div>
+            </section>
+
+            <section id="parent-view" class="bg-white rounded-xl shadow-md p-6 mb-8 hidden">
+                <h2 class="text-2xl font-semibold mb-4 lang-en">Parent/Teacher Analytics</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ru hidden">Аналитика Родителя/Учителя</h2>
+                <h2 class="text-2xl font-semibold mb-4 lang-ua hidden">Аналітика Батьків/Вчителя</h2>
+                <canvas id="analytics-chart" width="400" height="200"></canvas>
+                <ul class="mt-6 space-y-2">
+                    <li class="flex justify-between lang-en"><span>Lessons Completed:</span> <span>4/6</span></li>
+                    <li class="flex justify-between lang-ru hidden"><span>Уроки Завершены:</span> <span>4/6</span></li>
+                    <li class="flex justify-between lang-ua hidden"><span>Уроки Завершені:</span> <span>4/6</span></li>
+                    <li class="flex justify-between lang-en"><span>Average Quiz Score:</span> <span>85%</span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-forest-green text-white py-8 mt-20">
+        <div class="text-center">
+            <p class="lang-en">&amp;copy; 2025 SlavicBridge</p>
+            <p class="lang-ru hidden">&amp;copy; 2025 Славянский Мост</p>
+            <p class="lang-ua hidden">&amp;copy; 2025 Слов'янський Міст</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        const progressCtx = document.getElementById('progress-chart').getContext('2d');
+        new Chart(progressCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'Remaining'],
+                datasets: [{
+                    data: [60, 40],
+                    backgroundColor: ['#10b981', '#d1d5db']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                }
+            }
+        });
+
+        const analyticsCtx = document.getElementById('analytics-chart').getContext('2d');
+        new Chart(analyticsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4'],
+                datasets: [{
+                    label: 'Scores',
+                    data: [90, 80, 95, 70],
+                    backgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        document.getElementById('view-toggle').addEventListener('click', function() {
+            const studentView = document.getElementById('student-view');
+            const parentView = document.getElementById('parent-view');
+            if (studentView.classList.contains('hidden')) {
+                studentView.classList.remove('hidden');
+                parentView.classList.add('hidden');
+                this.textContent = 'Switch to Parent/Teacher View';
+            } else {
+                studentView.classList.add('hidden');
+                parentView.classList.remove('hidden');
+                this.textContent = 'Switch to Student View';
+            }
+        });
+
+        function loadProgressData() {
+            const progress = JSON.parse(localStorage.getItem('slavicbridge-progress') || '{}');
+            const completed = Object.values(progress).filter(Boolean).length;
+            const total = 6;
+            const percentage = (completed / total) * 100;
+            if (progressCtx) {
+                progressCtx.chart.data.datasets[0].data = [percentage, 100 - percentage];
+                progressCtx.chart.update();
+            }
+        }
+
+        loadProgressData();
+    </script>
+</body>
+</html>
