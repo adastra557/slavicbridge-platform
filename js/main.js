@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.lang-en, .lang-ru, .lang-ua').forEach(el => {
             el.classList.add('hidden');
         });
-        document.querySelectorAll('.lang-${lang}').forEach(el => {
+        document.querySelectorAll(`.lang-${lang}`).forEach(el => {
             el.classList.remove('hidden');
         });
         localStorage.setItem('language', lang);
